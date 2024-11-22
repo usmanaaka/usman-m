@@ -1,0 +1,67 @@
+/*----------------------------------------*/
+/*  29. preloader
+/*----------------------------------------*/
+
+.preloader{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1000;
+	background: #000;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .preloader .percentage{
+	color: #fff;
+	font-size: 100px;
+	font-family: 'Butler Stencil';
+  }
+  
+  .preloader .progress{
+	background: #191B1D;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	mix-blend-mode: difference;
+  }
+
+
+  .xb-loadding-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 1030;
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-ms-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+.xb-loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 50px;
+	text-align: center;
+}
+  .xb-loadding-inner {
+	animation: zoominup 1.5s infinite linear;
+  -webkit-animation: zoominup 1.5s infinite linear;
+
+}
+.xb-loadding-inner img {
+	position: relative;
+	z-index: 2;
+	margin: auto;
+	max-width: 100%;
+	height: auto;
+}
