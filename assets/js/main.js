@@ -42,7 +42,11 @@
 		});
 
 		// preloader style 2
-		$('#xb-loadding').delay(500).fadeOut(500);
+		// $('#xb-loadding').delay(500).fadeOut(500);
+		$(window).on('load', function () {
+			$('#xb-loadding').fadeOut(300); // Reduce the fade-out duration for faster visibility
+		});
+		
 	}
 
 	/*------------------------------------------
