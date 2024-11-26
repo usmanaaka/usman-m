@@ -1,17 +1,1 @@
-(function($) {
-    "use strict";
-  
-    $('a.scrollspy-btn[href*="#"]:not([href="#"])').on('click', function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: (target.offset().top - 100)
-          }, 1000, "easeInOutExpo");
-          return false;
-        }
-      }
-    });
-  
-  })(jQuery); // End of use strict
+!function(t){"use strict";t('a.scrollspy-btn[href*="#"]:not([href="#"])').on("click",(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var e=t(this.hash);if((e=e.length?e:t("[name="+this.hash.slice(1)+"]")).length)return t("html, body").animate({scrollTop:e.offset().top-100},1e3,"easeInOutExpo"),!1}}))}(jQuery);
