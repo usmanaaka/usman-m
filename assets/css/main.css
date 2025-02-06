@@ -47,7 +47,8 @@
 :root {
   --font-body: 'Outfit', sans-serif;
   --font-heading: 'Marcellus', serif;
-  --color-primary: #C4EF17;
+  --color-primary: #95f5f3;
+  /* #C4EF17 add8e6 #90d5ff*/
   --color-heading: #131217;
   --xb-track-color: #16171B;
   --color-dark: #0F172A;
@@ -3787,6 +3788,14 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 /*----------------------------------------*/
 /*  04. hero
 /*----------------------------------------*/
+.gray-effect{
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+.gray-effect:hover{
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
 .hero__contant .title {
   font-size: 115px;
   text-transform: uppercase;
@@ -4067,8 +4076,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   .hero-style-three .heo-sec-img {
     position: absolute;
     bottom: 0;
-    right: 0;
-    z-index: -1; }
+    right: 0; }
     @media only screen and (min-width: 1200px) and (max-width: 1500px) {
       .hero-style-three .heo-sec-img {
         max-width: 800px; } }
@@ -5426,7 +5434,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   .cta-title a {
     font-size: 16px;
     padding: 25px 35px;
-    background-color: var(--color-white);
+    /* background-color: var(--color-white); */
     font-weight: 600;
     color: var(--color-black);
     display: inline-block;
@@ -8923,7 +8931,7 @@ abbr[title] {
   .thm-btn--anim:hover .btn-anim-wrap {
     transform: translateY(-150%); }
   .thm-btn--anim:hover > span svg path {
-    fill: #CEFF0A; }
+    fill: var(--color-primary); }
   .thm-btn--dark {
     color: var(--color-white); }
     .thm-btn--dark .btn-shape svg path {
