@@ -5395,17 +5395,19 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
 /*  10. cta
 /*----------------------------------------*/
 .cta-bg {
-  min-height: 938px;
+  /* min-height: 938px; */
   width: 100%;
   padding: 223px 0;
   position: relative; }
   @media (max-width: 1199px) {
     .cta-bg {
-      min-height: 800px;
+      /* min-height: 800px; */
       padding: 130px 0; } }
   @media (max-width: 991px) {
     .cta-bg {
-      min-height: 750px; } }
+      /* min-height: 750px;  */
+    } 
+    }
 
 .cta-title {
   z-index: 1; }
