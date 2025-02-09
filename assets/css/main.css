@@ -6554,9 +6554,15 @@ blockquote {
 /*----------------------------------------*/
 /*  16. feature
 /*----------------------------------------*/
+.abc{
+  padding-left: 0px ;
+  padding-right: 0px ;
+
+}
+
 .xb-feature {
   position: relative;
-  padding: 60px 50px; }
+  padding: 60px 0px; }
   .xb-feature::before, .xb-feature:after {
     position: absolute;
     top: 0;
@@ -6602,6 +6608,7 @@ blockquote {
     .xb-feature__col:nth-child(1) .xb-feature::before, .xb-feature__col:nth-child(3) .xb-feature::before {
       display: none !important; } }
   .xb-feature .xb-item--title {
+    padding: 0px 0.5em;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: -1px;
@@ -6611,7 +6618,9 @@ blockquote {
       .xb-feature .xb-item--title {
         font-size: 32px; } }
   .xb-feature .xb-item--content {
-    color: var(--color-default); }
+    color: var(--color-default);
+    padding: 0px 1.5em;
+   }
 
 .feature-shape {
   position: absolute;
@@ -9360,8 +9369,8 @@ abbr[title] {
 .xb-logo-mobile {
   margin-bottom: 40px; }
 
-.xb-logo-mobile img {
-  height: 32px; }
+/* .xb-logo-mobile img {
+  height: 32px; } */
 
 .xb-header-mobile-search {
   margin-bottom: 20px; }
