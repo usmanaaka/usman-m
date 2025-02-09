@@ -4501,7 +4501,7 @@ body .mfp-wrap .mfp-container .mfp-content .mfp-close:hover::before, body .mfp-w
   line-height: 34px;
   letter-spacing: -0.22px;
   text-transform: uppercase;
-  color: var(--color-default);
+  color: var(--color-white);
   margin-bottom: 12px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -6603,13 +6603,13 @@ blockquote {
     font-size: 50px;
     font-weight: 400;
     letter-spacing: -1px;
-    color: #1D2026;
+    /* color: #1D2026; */
     margin-bottom: 10px; }
     @media (max-width: 767px) {
       .xb-feature .xb-item--title {
         font-size: 32px; } }
   .xb-feature .xb-item--content {
-    color: #1D2026; }
+    color: var(--color-default); }
 
 .feature-shape {
   position: absolute;
