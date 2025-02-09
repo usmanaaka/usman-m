@@ -6556,7 +6556,7 @@ blockquote {
 /*----------------------------------------*/
 .abc{
   padding-left: 0px ;
-  padding-right: 0px ;
+  /* padding-right: 0px ; */
 
 }
 
@@ -6608,7 +6608,7 @@ blockquote {
     .xb-feature__col:nth-child(1) .xb-feature::before, .xb-feature__col:nth-child(3) .xb-feature::before {
       display: none !important; } }
   .xb-feature .xb-item--title {
-    padding: 0px 0.5em;
+    /* padding: 0px 0.5em; */
     font-size: 50px;
     font-weight: 400;
     letter-spacing: -1px;
@@ -6619,7 +6619,7 @@ blockquote {
         font-size: 32px; } }
   .xb-feature .xb-item--content {
     color: var(--color-default);
-    padding: 0px 1.5em;
+    /* padding: 0px 1.5em; */
    }
 
 .feature-shape {
