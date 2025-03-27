@@ -2,18 +2,15 @@
 <html lang="zxx">
 
 <head>
-
     <!--========= Required meta tags =========-->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="keywords" content="digital solutions, web development, app design, branding, digital marketing, creative solutions, business transformation">
 
     <title>Usman M - Freelancer</title>
 
     <link rel="shortcut icon" href="assets/img/fav.webp" type="images/x-icon"/>
-
     <!-- css include -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -54,6 +51,7 @@
 </div>
 <!-- line end -->
 
+
 <div class="body_wrap">
 
     <!-- header start -->
@@ -73,7 +71,7 @@
                                 <li>
                                     <a href="service.html"><span>Services</span></a>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="project.html"><span>Portfolio</span></a>
                                 </li>
                                 <li>
@@ -188,168 +186,222 @@
 
     <!-- main area start  -->
     <main>
-        <!-- hero section start  -->
+        <!-- breadcrumb start  -->
         <section class="breadcrumb pt-105 pb-90">
             <div class="container">
                 <div class="breadcrumb__content text-center">
-                    <h2 class="breadcrumb__title">Aura | Interior Design</h2>
+                    <h2 class="breadcrumb__title">Booking Page</h2>
                     <ul class="breadcrumb__list">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="project.html">Portfolio</a></li>
-                        <li class="breadcrumb-item">Project Details</li>
+                        <li class="breadcrumb-item">Booking</li>
                     </ul>
                 </div>
             </div>
         </section>
-        <!-- hero section end  -->
+        <!-- breadcrumb end  -->
 
-        <!-- project-marketing section end  -->
-        <section class="project-marketing pt-90 pb-130">
-            <h1 class="pm-title text-center pb-120">Website Design & Development</h1>
-            <img src="assets/img/portfolio/Website/Aura-web/website-redesign.webp" alt="">
+        <!-- contact start -->
+        <section class="pt-110 pb-180">
             <div class="container">
-                <br><br>
-                <div class="row align-items-end">
-                    <div class="col-lg-8 mb-30">
-                        <div class="section-title pos-rel">
-                            <span class="sub-title">ABOUT THE PROJECT</span>
-                            <h3 class="title service-title mb-25">Delivering Better Business News With an Improved
-                            <span>User Experience.</span></h3>
-                            <p class="ap-content">My focus is to create dynamic and user-centric websites that engage customers and drive business growth. This project, Aura Interior Design, was designed with the aim to provide a sleek, modern UI/UX that enhances user experience while showcasing the brand's core identity.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="po-image z-3 pt-100 pb-130">
-                <img src="assets/img/portfolio/Website/Aura-web/professional-website-design.webp" alt="">
-            </div>
-            <div class="container">
-                <div class="row mt-none-30">
-                    <div class="col-lg-12 mt-30">
-                        <div class="sv-details pd-details">
-                            <div class="section-title mb-60">
-                                <h2 class="title pd-title">Overview</h2>
-                            </div>
-                            <h3 class="sv-title">Crafting a Seamless User Experience for Enhanced Interaction and Functionality.</h3>
-                            <ul class="sv-list pd-list">
-                                <li>Custom UI/UX design for intuitive user navigation</li>
-                                <li>Responsive web design for seamless mobile and desktop viewing</li>
-                                <li>Advanced functionality integration to streamline user interactions</li>
-                                <li>Optimized website performance and load speed for better user retention</li>
-                            </ul>
-                        </div>                        
-                    </div>
-                    <!-- <div class="col-lg-6 mt-30">
-                        <div class="sv-details pd-details">
-                            <div class="section-title mb-60">
-                                <h2 class="title pd-title">Overview</h2>
-                            </div>
-                            <h3 class="sv-title">Great user experience design lets users focus on the <br> task they have to complete and evokes emotion <br> without distracting them.!</h3>
-                            <ul class="sv-list pd-list">
-                                <li>Presentation of your logo on different media</li>
-                                <li>Graphic research and production</li>
-                                <li>Graphic research and production</li>
-                                <li>Delivery of your logo in professional formats</li>
-                            </ul>
-                        </div>
+                    <!-- <div class="section-title contact-title mb-35">
+                        <span class="sub-title">
+                            Share your creative ideas with us, and 
+                            receive designs that captivate, impress, 
+                            and truly engage your audience.
+                        </span>
                     </div> -->
-                </div>
-                <div class="row g-150 pt-30">
-                    <div class="col-lg-6 mt-30">
-                        <div class="pd-poster">
-                            <h2 class="pd-poster-title">Mobile Responsive</h2>
-                            <!-- For Grey Scale Image: class="pd-image" -->
-                            <div><img src="assets/img/portfolio/Website/Aura-web/responsive-website-design.webp" alt=""></div>
-                        </div>
+                    <div class="contact-form-inner">
+                        <form id="bookingForm" class="contact-form pos-rel">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="xb-item--field">
+                                        <label for="availableSlots">Available Slots: *</label>
+                                        <select id="availableSlots" name="slot" required></select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="xb-item--field">
+                                        <label for="name">Name: *</label>
+                                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="xb-item--field">
+                                        <label for="email">Email: *</label>
+                                        <input type="email" id="email" name="email" placeholder="John@Doe.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="xb-item--field">
+                                        <label for="phone">Phone Number: *</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="+44 0102 0304057" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="xb-item--field">
+                                        <label for="notes">Notes/Agenda:</label>
+                                        <textarea id="notes" name="notes" cols="30" rows="10" placeholder="Agenda of booking"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div style="border-bottom: none;" class="xb-item--field">
+                                        <input type="hidden" id="userTimeZone" name="userTimeZone">
+                                        <div class="g-recaptcha" data-sitekey="6LeOdv0qAAAAAMrEJ8wqYEP1ZK5BFR9lvjm9I6ZW"></div>
+                                        
+
+                                        <div id="loadingSpinner" class="loader xb-loadding-container">
+                                            <div class="xb-loader">
+                                                <div class="xb-loadding-inner">
+                                                    <img src="assets/img/logo/logo-a.webp" alt="">
+                                                 </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="loader" id="loadingSpinner"></div> -->
+                                        
+                                        <button style="background: none;" type="submit" class="thm-btn thm-btn--anim mt-30">
+                                            <span class="btn-shape"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 53" fill="none" preserveAspectRatio="none">
+                                                <path d="M4.0981 4.86337C4.64282 2.03999 7.11401 0 9.98946 0H158.884C161.85 0 164.371 2.1678 164.816 5.10073L167.284 21.379C167.759 24.5119 167.766 27.6981 167.304 30.8331L164.797 47.8734C164.364 50.818 161.837 53 158.861 53H10.0172C7.12933 53 4.65118 50.9428 4.11965 48.1044L1.11963 32.0835C0.379833 28.1329 0.390937 24.0782 1.15236 20.1316L4.0981 4.86337Z" fill="#C4EF17"/>
+                                              </svg>
+                                            </span>
+                                            <div class="btn-anim-wrap">
+                                                <span class="button-text">Let’s Book <img src="assets/img/icon/arrow-up.svg" alt=""></span>
+                                                <span class="button-text">Let’s Book <img src="assets/img/icon/arrow-up.svg" alt=""></span>
+                                            </div>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-lg-6 mt-30">
-                        <div class="pd-Toolkit">
-                            <h2 class="pd-poster-title">UX Design</h2>
-                            <div><img src="assets/img/portfolio/Website/Aura-web/website-development.webp" alt=""></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
-        <!-- project single end  -->
-        
+        <!-- contact end -->
     </main>
     <!-- main area end  -->
-
-<!-- footer strt -->
-<!-- <footer class="footer xb-footer-bg bg_img ukiyo" data-u-speed="1.5" data-background="assets/img/bg/footer_bg.webp">
-    <div class="xb-footer-wrap pt-120 pb-80">
-        <div class="container">
-            <div class="xb-footer-inner">
-                <div class="xb-footer ul_li pb-75">
-                    <div class="row align-items-center mt-none-30">
-                        <div class="col-lg-6 col-md-6 mt-30">
-                            <a class="circle-btn xb-item--left pos-rel" href="https://wa.me/447428411517?text=Hello%20Team%2C%20I%20am%20looking%20for%20assistance%20with..." target="_blank">
-                                <div class="button__bg"></div>
-                                <div class="xb-item--icon">
-                                    <img src="assets/img/icon/arrow-up-2.svg" alt="">
-                                </div>
-                                <span class="xb-item--head">Ping us</span>
-                            </a>
-                        </div>
-                        <div class="col-lg-3 col-md-6 mt-30">
-                            <div class="footer-widget xb-item--con">
-                                <h4 class="widget-title">SUPPORTED PLATFORMS</h4>
-                                <ul class="xb-item--social">
-                                    <li><a href="#!">E-books..</a></li>
-                                    <li><a href="#!">Websites..</a></li>
-                                    <li><a href="#!">Social Media..</a></li>
-                                    <li><a href="#!">Mobile App.. </a></li>
-                                    <li><a href="#!">Custom Development..</a></li>
-                                </ul>
-                                <h4 class="widget-title">USEFULL LINK</h4>
-                                <ul class="footer-links">
-                                    <li><a href="about.html">About US</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12 mt-30">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-6">
-                                    <div class="footer-widget">
-                                        <h4 class="widget-title">CONTACT INFO</h4>
-                                        <h3 class="xb-item--content">15-1 Leigh Rodd, Watford, UK <br> +44 742 841 1517
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-6">
-                                    <div class="footer-widget">
-                                        <h4 class="widget-title">MORE INFO</h4>
-                                        <ul class="footer-links">
-                                            <li><a href="about.html">Our Company</a></li>
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="project.html">Portfolio</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom ul_li_between">
-                    <div class="copyright">
-                        <p>Copyright © 2024 <a href="index.html">Usman M.</a>. All rights reserved.</p>
-                    </div>
-                    <ul class="footer-nav ul_li_right">
-                        <li><a href="#!">Tram and Condition</a></li>
-                        <li><a href="#!">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer> -->
-<!-- footer end -->
-
 </div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwQb-P1V8aTHk0E3q9F18LurUicA8kAE-UveRSyd0qYjwpJnPpaizoBFlHYZRKpNAqp/exec";
+
+    // Get user's timezone
+    document.getElementById("userTimeZone").value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // Show loading spinner
+    function showLoading() {
+        document.getElementById("loadingSpinner").style.display = "inline-block";
+    }
+
+    // Hide loading spinner
+    function hideLoading() {
+        document.getElementById("loadingSpinner").style.display = "none";
+    }
+
+    // Format date in UK time with AM/PM
+    function formatUKTime(date) {
+        return date.toLocaleString("en-GB", {
+            timeZone: "Europe/London",
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true
+        }) + " UK time";
+    }
+
+    // Fetch available slots
+    async function fetchSlots() {
+        showLoading();
+        try {
+            let response = await fetch(scriptURL + "?action=getSlots");
+            let data = await response.json();
+
+            let dropdown = document.getElementById("availableSlots");
+            dropdown.innerHTML = "";
+
+            if (data.slots.length > 0) {
+                data.slots.forEach(slot => {
+                    let option = document.createElement("option");
+                    option.value = slot; // Store raw ISO string
+                    option.textContent = formatUKTime(new Date(slot)); // Display in UK time
+                    dropdown.appendChild(option);
+                });
+            } else {
+                dropdown.innerHTML = "<option>No slots available</option>";
+            }
+        } catch (error) {
+            console.error("Error fetching slots:", error);
+            dropdown.innerHTML = "<option>Error loading slots</option>";
+        } finally {
+            hideLoading();
+        }
+    }
+
+    // Fetch existing bookings
+    async function fetchBookings() {
+        showLoading();
+        try {
+            let response = await fetch(scriptURL + "?action=getBookings");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("bookingsTable").getElementsByTagName("tbody")[0];
+            tableBody.innerHTML = "";
+
+            if (data.bookings.length > 0) {
+                data.bookings.forEach(booking => {
+                    let row = tableBody.insertRow();
+                    row.insertCell().textContent = booking.name;
+                    row.insertCell().textContent = formatUKTime(new Date(booking.slot)); // Display in UK time
+                });
+            } else {
+                tableBody.innerHTML = "<tr><td colspan='2'>No bookings found</td></tr>";
+            }
+        } catch (error) {
+            console.error("Error fetching bookings:", error);
+            tableBody.innerHTML = "<tr><td colspan='2'>Error loading bookings</td></tr>";
+        } finally {
+            hideLoading();
+        }
+    }
+
+    // Initial fetch
+    fetchSlots();
+    fetchBookings();
+
+    // Handle form submission
+
+document.getElementById("bookingForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+        alert("Please complete the CAPTCHA.");
+        return;
+    }
+
+    showLoading();
+    let formData = new FormData(event.target);
+    formData.append("g-recaptcha-response", recaptchaResponse);
+
+    try {
+        let response = await fetch(scriptURL, { method: "POST", body: formData });
+        let data = await response.json();
+
+        if (data.error) {
+            alert("Error: " + data.error);
+        } else {
+            window.location.href = data.thankYouPageUrl; // Redirect to Thank You page
+        }
+    } catch (error) {
+        console.error("Error submitting booking:", error);
+        alert("Booking failed. Try again.");
+    } finally {
+        hideLoading();
+        grecaptcha.reset(); // Reset CAPTCHA
+    }
+});
+</script>
 
 <!-- jquery include -->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
@@ -377,7 +429,8 @@
 <script src="assets/js/lenis.js"></script>
 <script src="assets/js/moment.min.js"></script>
 <script src="assets/js/main.js"></script>
-
+<script src="assets/js/form-validation.js"></script>
+<script src="assets/js/form-whatsapp.js"></script>
 
 </body>
 

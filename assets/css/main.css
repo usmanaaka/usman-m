@@ -6863,7 +6863,8 @@ blockquote {
     color: var(--color-white);
     margin-bottom: 30px; }
   .contact-form .xb-item--field input,
-  .contact-form .xb-item--field textarea {
+  .contact-form .xb-item--field textarea,
+  .contact-form .xb-item--field select {
     background: none;
     font-weight: 400;
     color: #B2B6B8;
@@ -6875,6 +6876,7 @@ blockquote {
     height: 145px;
     padding-top: 18px;
     border-bottom: 1px solid rgba(131, 131, 131, 0.5); }
+    
 .contact-form .port-btn {
   position: absolute;
   bottom: -51px;
@@ -6920,7 +6922,8 @@ blockquote {
   .contact-form-inner .contact-form .xb-item--field label {
     text-transform: uppercase;
     font-family: var(--font-heading); }
-  .contact-form-inner .contact-form .xb-item--field input {
+  .contact-form-inner .contact-form .xb-item--field input,
+  .contact-form-inner .contact-form .xb-item--field select {
     height: 60px; }
   .contact-form-inner .contact-form .xb-item--field textarea {
     border: none;
@@ -9027,7 +9030,7 @@ abbr[title] {
 .circle-btn .button__bg::before, .circle-btn .button__bg::after {
   content: '';
   position: absolute;
-  background: #CEFF0A; }
+  background: var(--color-primary); }
 
 .circle-btn .button__bg::before {
   width: 110%;
