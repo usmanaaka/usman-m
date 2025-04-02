@@ -7,9 +7,5 @@
     "routes": [
       { "src": "/api/submit", "dest": "/api/submit", "methods": ["POST", "OPTIONS"] },
       { "src": "/(.*)", "dest": "/index.html" }
-    ],
-    "env": {
-      "API_KEY": "@google-script-api-key",
-      "GOOGLE_SCRIPT_URL": "@google-script-url"
-    }
+    ]
   }
