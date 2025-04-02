@@ -1,15 +1,15 @@
 {
     "version": 2,
-    "headers": [
-      {
-        "source": "/api/(.*)",
-        "headers": [
-          { 
-            "key": "Access-Control-Allow-Origin", 
-            "value": "https://usman-m.com" 
-          },
-          { "key": "Access-Control-Allow-Methods", "value": "POST" }
-        ]
-      }
-    ]
+    "builds": [
+      { "src": "api/submit.js", "use": "@vercel/node" },
+      { "src": "*.html", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/api/submit", "dest": "/api/submit", "methods": ["POST", "OPTIONS"] },
+      { "src": "/(.*)", "dest": "/index.html" }
+    ],
+    "env": {
+      "API_KEY": "@google-script-api-key",
+      "GOOGLE_SCRIPT_URL": "@google-script-url"
+    }
   }
