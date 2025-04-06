@@ -36,7 +36,8 @@ export default async function handler(req, res) {
       body
     });
 
-    const text = await response.text();
+    const text = await response.text();  // Get raw response text for debugging
+    console.log('Google Script Response:', text);  // Log the response
 
     if (response.ok) {
       return res.status(200).json({ status: "success", response: text });
