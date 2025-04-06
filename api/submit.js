@@ -1,5 +1,6 @@
+import querystring from 'querystring';
+
 export default async function handler(req, res) {
-  // CORS
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -19,38 +20,32 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  const body = querystring.stringify({
+    name,
+    email,
+    message,
+    apiKey: "Memon_123!Pak$%_(&!@F442)@",
+    referer: "https://form.usman-m.com",
+    recaptchaResponse
+  });
+
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbyHP35Nxs9ofbw76MCqZlW8uKGbOQQNOIz4yaDXiAhznfHupzjWeyn0UAyAbB9ksjbh/exec", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-        apiKey: "Memon_123!Pak$%_(&!@F442)@",
-        referer: "https://form.usman-m.com",
-        recaptchaResponse
-      })
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body
     });
 
     const text = await response.text();
-    let result;
-
-    try {
-      result = JSON.parse(text);
-    } catch (e) {
-      console.error("Invalid JSON from Google Script:", text);
-      return res.status(502).json({ error: "Google script returned invalid JSON", raw: text });
-    }
 
     if (response.ok) {
-      return res.status(200).json({ status: "success", result });
+      return res.status(200).json({ status: "success", response: text });
     } else {
-      return res.status(response.status).json({ error: "Script error", result });
+      return res.status(response.status).json({ error: "App Script error", response: text });
     }
   } catch (error) {
     console.error("Fetch error:", error);
-    return res.status(500).json({ error: "Internal Server Error", details: error.message });
+    return res.status(500).json({ error: "Internal Server Error", message: error.message });
   }
 }
 
