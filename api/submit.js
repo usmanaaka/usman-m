@@ -1,7 +1,19 @@
 export default async function handler(req, res) {
+  // CORS preflight handling
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    return res.status(200).end();
+  }
+
+  // Allow only POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
+
+  // CORS header for actual POST request
+  res.setHeader('Access-Control-Allow-Origin', '*');
 
   const { name, email, message, recaptchaResponse } = req.body;
 
@@ -20,7 +32,7 @@ export default async function handler(req, res) {
         message,
         apiKey: "Memon_123!Pak$%_(&!@F442)@",
         referer: "https://form.usman-m.com",
-        recaptchaResponse, // Optional if App Script doesn’t validate it
+        recaptchaResponse
       })
     });
 
@@ -36,6 +48,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 }
+
 
 
 
