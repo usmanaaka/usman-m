@@ -619,13 +619,13 @@
                                 <div class="col-lg-6">
                                     <div class="xb-item--field">
                                         <label for="name">Your Name *</label>
-                                        <input id="name" name="name" type="text" placeholder="Enter your name" required>
+                                        <input id="name" name="name" type="text" placeholder="Enter your name" >
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="xb-item--field">
                                         <label for="number">Email *</label>
-                                        <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+                                        <input id="email" name="email" type="email" placeholder="Enter your email address" >
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -673,7 +673,41 @@
 </div>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
 <script>
+
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value
+  };
+
+  try {
+    const response = await fetch("api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) throw new Error("Request failed");
+    const data = await response.json();
+    console.log("Success:", data);
+    alert("Form submitted!");
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Submission failed. Check console.");
+  }
+});
+</script>
+
+
+
+
+
+<!-- <script>
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
       
@@ -687,7 +721,7 @@
         loader.style.display = "inline-block";
 
     
-        fetch("/api/submit.js", {  // Calls Vercel function
+        fetch("https://form.usman-m.com/api/submit.js", {  // Calls Vercel function
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
@@ -721,7 +755,7 @@
             loader.style.display = "none"; // Hide loader
         });
     });
-</script>
+</script> -->
 
 <!-- <script>
     document.getElementById("contact-form").addEventListener("submit", function(event) {
