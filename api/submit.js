@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  // CORS preflight handling
+  // CORS
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -7,17 +7,14 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // Allow only POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: "Method Not Allowed" });
   }
 
-  // CORS header for actual POST request
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   const { name, email, message, recaptchaResponse } = req.body;
 
-  // Validate required fields
   if (!name || !email || !message) {
     return res.status(400).json({ error: "Missing required fields" });
   }
@@ -36,18 +33,27 @@ export default async function handler(req, res) {
       })
     });
 
-    const result = await response.json();
+    const text = await response.text();
+    let result;
+
+    try {
+      result = JSON.parse(text);
+    } catch (e) {
+      console.error("Invalid JSON from Google Script:", text);
+      return res.status(502).json({ error: "Google script returned invalid JSON", raw: text });
+    }
 
     if (response.ok) {
       return res.status(200).json({ status: "success", result });
     } else {
-      return res.status(response.status).json(result);
+      return res.status(response.status).json({ error: "Script error", result });
     }
   } catch (error) {
-    console.error("Error forwarding to App Script:", error);
-    return res.status(500).json({ error: "Internal Server Error" });
+    console.error("Fetch error:", error);
+    return res.status(500).json({ error: "Internal Server Error", details: error.message });
   }
 }
+
 
 
 
