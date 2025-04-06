@@ -676,6 +676,15 @@
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();
       
+        // Check if reCAPTCHA is completed
+        var recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length === 0) {
+            // If reCAPTCHA is not completed, display an error message
+            document.getElementById("form-message").innerText = "Please complete the reCAPTCHA.";
+            document.getElementById("form-message").style.color = "red";
+            return; // Don't proceed with form submission
+        }
+
         var formData = new FormData(event.target);
         var data = {};
         formData.forEach((value, key) => data[key] = value);
@@ -685,19 +694,22 @@
         // Show loader
         loader.style.display = "inline-block";
 
-    
         fetch("https://form.usman-m.com/api/submit.js", {  // Calls Vercel function
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-    // No API key here!
-  })
-})
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+                recaptchaResponse: recaptchaResponse // Include reCAPTCHA response in the request
+            })
+        })
         .then(() => {
             console.log("Form submitted successfully!");
+            name = document.getElementById("name").value,
+            email = document.getElementById("email").value,
+            message = document.getElementById("message").value;
+            console.log(name, email, message);
     
             // Show success message
             document.getElementById("form-message").innerText = "Your message has been sent successfully!";
@@ -721,6 +733,7 @@
         });
     });
 </script>
+
 
 
 
