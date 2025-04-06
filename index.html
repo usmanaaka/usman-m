@@ -686,7 +686,7 @@ document.getElementById("contact-form").addEventListener("submit", async (e) => 
   };
 
   try {
-    const response = await fetch("https://form.usman-m.com/api/submit.js", {
+    const response = await fetch("/api/submit.js", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
