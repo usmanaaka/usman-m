@@ -694,9 +694,7 @@
         // Show loader
         loader.style.display = "inline-block";
 
-        const BACKEND_URL_KEY = process.env.BACKEND_URL;
-
-        fetch(BACKEND_URL_KEY, { 
+        fetch("https://form.usman-m.com/api/submit.js", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
