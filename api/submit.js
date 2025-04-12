@@ -33,7 +33,14 @@ export default async function handler(req, res) {
     const response = await fetch("https://script.google.com/macros/s/AKfycbyHP35Nxs9ofbw76MCqZlW8uKGbOQQNOIz4yaDXiAhznfHupzjWeyn0UAyAbB9ksjbh/exec", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        apiKey: "Memon_123!Pak$%_(&!@F442)@",
+        referer: "https://form.usman-m.com",
+        recaptchaResponse
+      })
     });
 
     const text = await response.text();  // Get raw response text for debugging
