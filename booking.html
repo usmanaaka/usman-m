@@ -282,7 +282,8 @@
 </div>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbx9yPnYYK5lYef2we1Du6Ul4QFOX6RPMYcpZY7CNbW4Thi_9LoR70WIVAjU19AH1zg3/exec";
+    // const scriptURL = "https://script.google.com/macros/s/AKfycbx9yPnYYK5lYef2we1Du6Ul4QFOX6RPMYcpZY7CNbW4Thi_9LoR70WIVAjU19AH1zg3/exec";
+    const scriptURL = "https://form.usman-m.com/api/booking";
 
     // Get user's timezone
     document.getElementById("userTimeZone").value = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -385,7 +386,12 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     formData.append("g-recaptcha-response", recaptchaResponse);
 
     try {
-        let response = await fetch(scriptURL, { method: "POST", body: formData });
+        // let response = await fetch(scriptURL, { method: "POST", body: formData });
+        let response = await fetch(scriptURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formObj)
+        });
         let data = await response.json();
 
         if (data.error) {
