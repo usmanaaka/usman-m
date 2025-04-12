@@ -385,6 +385,10 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     let formData = new FormData(event.target);
     formData.append("g-recaptcha-response", recaptchaResponse);
 
+    let formObj = {};
+    formData.forEach((value, key) => formObj[key] = value);
+    formObj["g-recaptcha-response"] = recaptchaResponse;
+
     try {
         // let response = await fetch(scriptURL, { method: "POST", body: formData });
         let response = await fetch(scriptURL, {
