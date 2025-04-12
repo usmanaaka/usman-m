@@ -32,7 +32,7 @@ export default async function handler(req, res) {
   try {
     const response = await fetch("https://script.google.com/macros/s/AKfycbyHP35Nxs9ofbw76MCqZlW8uKGbOQQNOIz4yaDXiAhznfHupzjWeyn0UAyAbB9ksjbh/exec", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      headers: { "Content-Type": "application/json" },
       body
     });
 
