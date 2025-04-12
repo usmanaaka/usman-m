@@ -694,7 +694,9 @@
         // Show loader
         loader.style.display = "inline-block";
 
-        fetch("https://form.usman-m.com/api/submit.js", {  // Calls Vercel function
+        const BACKEND_URL_KEY = process.env.BACKEND_URL;
+
+        fetch(BACKEND_URL_KEY, { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -733,38 +735,6 @@
         });
     });
 </script>
-
-
-
-
-<!-- <script>
-    document.getElementById("contact-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value
-  };
-
-  try {
-    const response = await fetch("/api/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-
-    if (!response.ok) throw new Error("Request failed");
-    const data = await response.json();
-    console.log("Success:", data);
-    alert("Form submitted!");
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Submission failed. Check console.");
-  }
-});
-</script> -->
-
 
 <!-- jquery include -->
 <script src="assets/js/jquery-3.7.1.min.js"></script>

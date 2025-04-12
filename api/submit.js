@@ -32,9 +32,6 @@ export default async function handler(req, res) {
     recaptchaResponse
   });
 
-
-
-
   try {
     const response = await fetch(APP_SCRIPT_URL, {
       method: "POST",
