@@ -20,24 +20,30 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  const APP_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
+  const APP_SCRIPT_API_KEY = process.env.API_KEY;
+
   const body = querystring.stringify({
     name,
     email,
     message,
-    apiKey: "Memon_123!Pak$%_(&!@F442)@",
+    apiKey: APP_SCRIPT_API_KEY,
     referer: "https://form.usman-m.com",
     recaptchaResponse
   });
 
+
+
+
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbyHP35Nxs9ofbw76MCqZlW8uKGbOQQNOIz4yaDXiAhznfHupzjWeyn0UAyAbB9ksjbh/exec", {
+    const response = await fetch(APP_SCRIPT_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
         email,
         message,
-        apiKey: "Memon_123!Pak$%_(&!@F442)@",
+        apiKey: APP_SCRIPT_API_KEY,
         referer: "https://form.usman-m.com",
         recaptchaResponse
       })
