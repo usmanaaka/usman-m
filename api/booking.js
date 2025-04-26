@@ -108,7 +108,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           ...formData,
           "g-recaptcha-response": recaptchaResponse,
-          referer: req.headers.referer || "https://yourdomain.com",
+          referer: req.headers.referer || "https://form.usman-m.com",
         }),
       });
 
