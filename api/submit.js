@@ -22,6 +22,25 @@ export default async function handler(req, res) {
 
   const APP_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
   const APP_SCRIPT_API_KEY = process.env.API_KEY;
+  const secretKey = process.env.recaptcha;
+
+  const recaptchaVerifyRes = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: querystring.stringify({
+        secret: secretKey,
+        response: recaptchaResponse,
+      }),
+    }
+  );
+
+  const recaptchaVerifyData = await recaptchaVerifyRes.json();
+
+  if (!recaptchaVerifyData.success) {
+    return res.status(400).json({ error: "reCAPTCHA verification failed" });
+  }
 
   const body = querystring.stringify({
     name,
